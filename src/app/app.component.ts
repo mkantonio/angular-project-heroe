@@ -8,8 +8,9 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Contador App';
   numero: number = 10;
+  base: number = 5;
 
   acumular(valor: number){
-    this.numero+=1;
+    this.numero += valor;
   }
 }
