@@ -12,12 +12,32 @@ interface Personaje{
 })
 export class MainPageComponent {
   
+  personajes: Personaje[] = [
+    {
+      nombre: 'Alfa',
+      poder: 200
+    },
+    {
+      nombre: 'Beta',
+      poder: 201
+    }
+  ]
+
   nuevo: Personaje = {
-    nombre: 'Alfa',
-    poder: 14000
+    nombre: '',
+    poder: 0
   }
 
   agregar() {
+    
+    if (this.nuevo.nombre.trim().length == 0) { return; }
+    
     console.log(this.nuevo);
+    this.personajes.push(this.nuevo);
+    this.nuevo = {
+      nombre: '',
+      poder: 0
+    };
+    
   }
 }
