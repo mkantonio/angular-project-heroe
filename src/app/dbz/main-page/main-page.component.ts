@@ -26,4 +26,9 @@ export class MainPageComponent {
     poder: 2021
   }
 
+  agregarNuevoPersonaje(argumento: Personaje){
+    console.log("hola desde el padre");
+    this.personajes.push(argumento);
+  }
+
 }
