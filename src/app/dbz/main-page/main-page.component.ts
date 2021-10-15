@@ -11,27 +11,11 @@ import { DbzService } from '../services/dbz.service';
 })
 export class MainPageComponent {
   
-  personajes: Personaje[] = [
-    {
-      nombre: 'Alfa',
-      poder: 200
-    },
-    {
-      nombre: 'Beta',
-      poder: 201
-    }
-  ]
-
   nuevo: Personaje = {
     nombre: 'Zetta',
     poder: 2021
   }
 
-  agregarNuevoPersonaje(argumento: Personaje){
-    console.log("hola desde el padre");
-    this.personajes.push(argumento);
-  }
-
-  constructor(private dbzService: DbzService){}
+  constructor(){}
 
 }
