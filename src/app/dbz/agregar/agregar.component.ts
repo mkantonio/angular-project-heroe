@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 import { Personaje } from '../interfaces/dbz.interface';
+import { DbzService } from '../services/dbz.service';
 
 @Component({
   selector: 'app-agregar',
@@ -14,12 +15,16 @@ export class AgregarComponent {
     poder: 0
   }
 
-  @Output() onNuevoPersonajes: EventEmitter<Personaje> = new EventEmitter();
+  // @Output() onNuevoPersonajes: EventEmitter<Personaje> = new EventEmitter();
+  
+  constructor(private dbzService: DbzService){
 
+  }
   agregar() {
     
     if (this.nuevo.nombre.trim().length == 0) { return; }
-    this.onNuevoPersonajes.emit(this.nuevo);
+    // this.onNuevoPersonajes.emit(this.nuevo);
+    this.dbzService.agregarPersonaje(this.nuevo);
     
     console.log(this.nuevo);
     this.nuevo = {
